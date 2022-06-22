@@ -7,5 +7,4 @@
 import math
 
 def solution(X, Y, D):
-    jumps = int(math.ceil( float(Y-X)/D ))
-    return jumps
+    return int(math.ceil( float(Y-X)/D ))

@@ -8,13 +8,12 @@ MAX_SLICES = 1000000000
 
 def solution(M, A):
     N = len(A)
-    a = 0
     b = 0
     count = 0
     countb = 0
     check = {}
 
-    while a < N:
+    for a in range(N):
         while b < N and A[b] not in check:
             countb += 1
             check[A[b]] = True
@@ -22,7 +21,6 @@ def solution(M, A):
 
         check.pop(A[a], None)
 
-        a += 1
         count += countb
         countb -= 1
 
