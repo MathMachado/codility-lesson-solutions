@@ -7,20 +7,11 @@
 def solution(A, B):
     Z = len(A)
 
-    counter = 0
-
-    for i in xrange(Z):
-        if commonPrimeDivisors(A[i], B[i]):
-            counter += 1
-
-    return counter
+    return sum(bool(commonPrimeDivisors(A[i], B[i])) for i in xrange(Z))
 
 
 def gcd(a, b):
-    if a % b == 0:
-        return b
-    else:
-        return gcd(b, a % b)
+    return b if a % b == 0 else gcd(b, a % b)
 
 
 def commonPrimeDivisors(a, b):
